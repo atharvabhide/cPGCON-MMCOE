@@ -888,7 +888,9 @@
     if (window.innerWidth <= 320 && html_location !== "index_mobile_s.html") {
         window.location = "index_mobile_s.html";
     }
-    history.scrollRestoration = "manual";
+    window.onbeforeunload = function() {
+      return "Dude, are you sure you want to leave? Think of the kittens!";
+    };
   </script>
 
 </body>
