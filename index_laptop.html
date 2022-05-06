@@ -860,9 +860,17 @@
 
   <script>
 //     // refreshing page automatically when viewport size change  
-  window.onresize = function(event) {
-    document.location.reload(true);
-  }
+  // window.onresize = function(event) {
+  //   document.location.reload(true);
+  // }
+
+var resizeTimeout;
+  window.addEventListener('resize', function(event) {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function(){
+      window.location.reload();
+    }, 1500);
+  });
 
 var href = window.location.href.split("/")
 var html_location = href[href.length-1]

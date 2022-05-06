@@ -1077,16 +1077,13 @@
     // }
   
 
-    if (!(/Mobi|Android/i.test(navigator.userAgent))) //if device is not mobile
-    {
-      var resizeTimeout;
-      window.addEventListener('resize', function(event) {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function(){
-          window.location.reload();
-        }, 1500);
-      });
-    }
+  var resizeTimeout;
+    window.addEventListener('resize', function(event) {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function(){
+        window.location.reload();
+      }, 1500);
+    });
     
     var href = window.location.href.split("/")
     var html_location = href[href.length-1]
